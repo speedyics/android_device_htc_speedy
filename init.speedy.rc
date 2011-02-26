@@ -1,3 +1,6 @@
+on early-init
+    export BOOTCLASSPATH /system/framework/core.jar:/system/framework/bouncycastle.jar:/system/framework/ext.jar:/system/framework/framework.jar:/system/framework/android.policy.jar:/system/framework/services.jar:/system/framework/core-junit.jar:/system/framework/wimax-api.jar
+
 on boot
     mount debugfs /sys/kernel/debug /sys/kernel/debug
 
@@ -89,8 +92,6 @@ service hciattach /system/bin/brcm_patchram_plus --enable_hci --enable_lpm \
     user bluetooth
     group bluetooth net_bt_admin
     disabled
-
-
 
 service udhcpd /system/bin/udhcpd
     disabled

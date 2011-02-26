@@ -123,6 +123,9 @@ PRODUCT_COPY_FILES += \
     device/htc/speedy/vold.fstab:system/etc/vold.fstab \
     device/htc/speedy/apns-conf.xml:system/etc/apns-conf.xml
 
+PRODUCT_COPY_FILES += \
+    device/htc/speedy/prebuilt/libcryp98.so:system/lib/libcryp98.so
+
 # Kernel modules
 #PRODUCT_COPY_FILES += \
 
