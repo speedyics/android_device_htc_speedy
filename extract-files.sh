@@ -37,12 +37,13 @@ adb pull /system/lib/libaudioalsa.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libaudioeq.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libcamera.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libgemini.so ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/lib/libgsl.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libhtc_acoustic.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libhtc_ril.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libgps.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libmmipl.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libmmjpeg.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/liboemcamera.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libposteffect.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/bin/wimaxDumpKmsg ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/bin/apph ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/bin/wimaxDumpLogcat ../../../vendor/htc/$DEVICE/proprietary
@@ -106,7 +107,6 @@ PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/libmmjpeg.so:/system/lib/libmmjpeg.so \\
     vendor/htc/__DEVICE__/proprietary/liboemcamera.so:/system/lib/liboemcamera.so \\
     vendor/htc/__DEVICE__/proprietary/libq3dtools_adreno200.so:/system/lib/egl/libq3dtools_adreno200.so \\
-    vendor/htc/__DEVICE__/proprietary/libposteffect.so:/system/lib/libposteffect.so \\
     vendor/htc/__DEVICE__/proprietary/logcat2:/system/bin/logcat2 \\
     vendor/htc/__DEVICE__/proprietary/lsc_camera:/system/bin/lsc_camera \\
     vendor/htc/__DEVICE__/proprietary/rmt_storage:/system/bin/rmt_storage \\
@@ -124,7 +124,11 @@ PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/wimaxAddRoute:/system/bin/wimaxAddRoute \\
     vendor/htc/__DEVICE__/proprietary/wimaxConfigInterface:/system/bin/wimaxConfigInterface \\
     vendor/htc/__DEVICE__/proprietary/DefaultTree.xml:/system/etc/wimax/sequansd/DefaultTree.xml \\
-    vendor/htc/__DEVICE__/proprietary/sequansd_app.xml:/system/etc/wimax/sequansd/sequansd_app.xml
+    vendor/htc/__DEVICE__/proprietary/sequansd_app.xml:/system/etc/wimax/sequansd/sequansd_app.xml \\
+    vendor/htc/__DEVICE__/proprietary/wimaxDhcp.conf:/system/etc/wimax/dhcp/wimaxDhcp.conf \\
+    vendor/htc/__DEVICE__/proprietary/libposteffect.so:/system/lib/libposteffect.so \\
+    vendor/htc/__DEVICE__/proprietary/ip:/system/bin/ip \\
+    vendor/htc/__DEVICE__/proprietary/wimax-api.jar:/system/framework/wimax-api.jar
 EOF
 
 ./setup-makefiles.sh

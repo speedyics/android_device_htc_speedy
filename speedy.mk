@@ -84,8 +84,6 @@ PRODUCT_COPY_FILES += \
     device/htc/speedy/keychars/qwerty2.kcm.bin:system/usr/keychars/qwerty2.kcm.bin \
     device/htc/speedy/keychars/qwerty.kcm.bin:system/usr/keychars/qwerty.kcm.bin \
     device/htc/speedy/keychars/speedy-keypad.kcm.bin:system/usr/keychars/speedy-keypad.kcm.bin \
-    device/htc/speedy/keychars/speedy-keypad-v0.kcm.bin:system/usr/keychars/speedy-keypad-v0.kcm.bin \
-    device/htc/speedy/keylayout/speedy-keypad-v0.kl:system/usr/keylayout/speedy-keypad-v0.kl \
     device/htc/speedy/keylayout/h2w_headset.kl:system/usr/keylayout/h2w_headset.kl\
     device/htc/speedy/keylayout/speedy-keypad.kl:system/usr/keylayout/speedy-keypad.kl \
     device/htc/speedy/keylayout/AVRCP.kl:system/usr/keylayout/AVRCP.kl \
@@ -98,8 +96,8 @@ PRODUCT_COPY_FILES += \
     device/htc/speedy/firmware/default.acdb:system/etc/firmware/default.acdb \
     device/htc/speedy/firmware/default_mfg.acdb:system/etc/firmware/default_mfg.acdb \
     device/htc/speedy/firmware/default_org.acdb:system/etc/firmware/default_org.acdb \
-    device/htc/speedy/firmware/fw_bcm4329.bin:system/etc/firmware/fw_bcm4329.bin \
-    device/htc/speedy/firmware/fw_bcm4329_apsta.bin:system/etc/firmware/fw_bcm4329_apsta.bin \
+    device/htc/speedy/firmware/fw_bcm4329.bin:system/vendor/firmware/fw_bcm4329.bin \
+    device/htc/speedy/firmware/fw_bcm4329_apsta.bin:system/vendor/firmware/fw_bcm4329_apsta.bin \
     device/htc/speedy/firmware/vidc_720p_command_control.fw:system/etc/firmware/vidc_720p_command_control.fw \
     device/htc/speedy/firmware/vidc_720p_h263_dec_mc.fw:system/etc/firmware/vidc_720p_h263_dec_mc.fw \
     device/htc/speedy/firmware/vidc_720p_h264_dec_mc.fw:system/etc/firmware/vidc_720p_h264_dec_mc.fw \
@@ -123,9 +121,6 @@ PRODUCT_COPY_FILES += \
     device/htc/speedy/vold.fstab:system/etc/vold.fstab \
     device/htc/speedy/apns-conf.xml:system/etc/apns-conf.xml
 
-PRODUCT_COPY_FILES += \
-    device/htc/speedy/prebuilt/libcryp98.so:system/lib/libcryp98.so
-
 # Kernel modules
 #PRODUCT_COPY_FILES += \
 
@@ -141,6 +136,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/htc/speedy/modules/bcm4329.ko:system/lib/modules/bcm4329.ko \
     device/htc/speedy/modules/sequans_sdio.ko:system/lib/modules/sequans_sdio.ko 
+
+PRODUCT_COPY_FILES += \
+    device/htc/speedy/prebuilt/libcryp98.so:system/lib/libcryp98.so
 
 $(call inherit-product-if-exists, vendor/htc/speedy/speedy-vendor.mk)
 
@@ -158,6 +156,6 @@ $(call inherit-product, build/target/product/full_base.mk)
 
 PRODUCT_NAME := htc_speedy
 PRODUCT_DEVICE := speedy
-PRODUCT_MODEL := HTC speedy
+PRODUCT_MODEL := PG06100
 PRODUCT_MANUFACTURER := HTC
 
