@@ -81,7 +81,7 @@ BOARD_USE_FROYO_LIBCAMERA := true
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := speedy
 BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 50000
 
-# Use RGB565 surfaces until userspace drivers are upgraded
+# Current drivers don't support new EGL config
 BOARD_NO_RGBX_8888 := true
 
 BOARD_HAVE_SQN_WIMAX := true
