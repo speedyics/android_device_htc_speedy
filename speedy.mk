@@ -19,7 +19,6 @@
 # not specialized for any geography.
 #
 
-
 # The gps config appropriate for this device
 PRODUCT_COPY_FILES += \
     device/htc/speedy/gps.conf:system/etc/gps.conf
@@ -149,6 +148,3 @@ $(call inherit-product, build/target/product/full_base.mk)
 
 PRODUCT_NAME := htc_speedy
 PRODUCT_DEVICE := speedy
-PRODUCT_MODEL := PG06100
-PRODUCT_MANUFACTURER := HTC
-
