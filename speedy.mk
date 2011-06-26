@@ -14,11 +14,6 @@
 # limitations under the License.
 #
 
-#
-# This is the product configuration for a generic GSM passion,
-# not specialized for any geography.
-#
-
 # The gps config appropriate for this device
 PRODUCT_COPY_FILES += \
     device/htc/speedy/gps.conf:system/etc/gps.conf
@@ -45,31 +40,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
 DEVICE_PACKAGE_OVERLAYS += device/htc/speedy/overlay
 
 PRODUCT_COPY_FILES += \
-    frameworks/base/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
-    frameworks/base/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
-    frameworks/base/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
-    frameworks/base/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
     frameworks/base/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml \
     frameworks/base/data/etc/android.hardware.sensor.compass.xml:system/etc/permissions/android.hardware.sensor.compass.xml \
-    frameworks/base/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
-    frameworks/base/data/etc/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
-    frameworks/base/data/etc/android.hardware.touchscreen.multitouch.distinct.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.distinct.xml \
     frameworks/base/data/etc/android.hardware.telephony.cdma.xml:system/etc/permissions/android.hardware.telephony.cdma.xml
 
-# media config xml file
-PRODUCT_COPY_FILES += \
-    device/htc/speedy/media_profiles.xml:system/etc/media_profiles.xml
-
 PRODUCT_PACKAGES += \
-    librs_jni \
     lights.speedy \
-    sensors.speedy \
-    gralloc.msm7x30 \
-    overlay.default \
     gps.speedy \
-    libOmxCore \
-    libOmxVenc \
-    libOmxVdec
+    sensors.speedy 
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
@@ -133,6 +111,9 @@ PRODUCT_COPY_FILES += \
     device/htc/speedy/prebuilt/libcryp98.so:system/lib/libcryp98.so
 
 $(call inherit-product-if-exists, vendor/htc/speedy/speedy-vendor.mk)
+
+# common msm7x30 configs
+$(call inherit-product, device/htc/msm7x30-common/msm7x30.mk)
 
 # media profiles and capabilities spec
 $(call inherit-product, device/htc/speedy/media_a1026.mk)

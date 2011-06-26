@@ -80,6 +80,10 @@ service dhcpWimax /system/bin/dhcpcd -ABKL -f /etc/wimax/dhcp/wimaxDhcp.conf wim
     disabled
     oneshot
 
+service iprenew_eth0 /system/bin/dhcpcd -n
+    disabled
+    oneshot
+
 # compass/accelerometer daemon
 service akmd /system/bin/akmd
     user compass
@@ -103,7 +107,6 @@ service udhcpd /system/bin/udhcpd
 
 service rmt_storage /system/bin/rmt_storage /dev/block/mmcblk0p13 /dev/block/mmcblk0p14
     user root
-    disabled
 
 service htc_ebdlogd /system/bin/htc_ebdlogd -s -k -P 7
     user root
@@ -120,9 +123,6 @@ on property:ro.build.tags=test-keys
 
 on property:ro.build.tags=release-keys
     start htc_ebdlogd_rel
-
-on property:ro.emmc=1
-    start rmt_storage
 
 # wimax daemons
 service sequansd /system/bin/sequansd /etc/wimax/sequansd/sequansd_app.xml
