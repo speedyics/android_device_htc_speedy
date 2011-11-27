@@ -14,6 +14,11 @@
 # limitations under the License.
 #
 
+
+PRODUCT_AAPT_CONFIG := normal hdpi
+PRODUCT_AAPT_PREF_CONFIG := hdpi
+
+
 # The gps config appropriate for this device
 PRODUCT_COPY_FILES += \
     device/htc/speedy/gps.conf:system/etc/gps.conf
@@ -85,7 +90,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_TAGS += dalvik.gc.type-precise
 
 # speedy uses high-density artwork where available
-PRODUCT_LOCALES += hdpi
+PRODUCT_LOCALES += en
 
 PRODUCT_COPY_FILES += \
     device/htc/speedy/vold.fstab:system/etc/vold.fstab \
@@ -105,7 +110,16 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
     device/htc/speedy/modules/bcm4329.ko:system/lib/modules/bcm4329.ko \
-    device/htc/speedy/modules/sequans_sdio.ko:system/lib/modules/sequans_sdio.ko 
+    device/htc/speedy/modules/sequans_sdio.ko:system/lib/modules/sequans_sdio.ko \
+    device/htc/speedy/modules/auth_rpcgss.ko:system/lib/modules/auth_rpcgss.ko \
+    device/htc/speedy/modules/cifs.ko:system/lib/modules/cifs.ko \
+    device/htc/speedy/modules/lockd.ko:system/lib/modules/lockd.ko \
+    device/htc/speedy/modules/nfs.ko:system/lib/modules/nfs.ko \
+    device/htc/speedy/modules/rpcsec_gss_krb5.ko:system/lib/modules/rpcsec_gss_krb5.ko \
+    device/htc/speedy/modules/sunrpc.ko:system/lib/modules/sunrpc.ko \
+    device/htc/speedy/modules/tun.ko:system/lib/modules/tun.ko \
+    device/htc/speedy/modules/wimaxdbg.ko:system/lib/modules/wimaxdbg.ko \
+    device/htc/speedy/modules/wimaxuart.ko:system/lib/modules/wimaxuart.ko
 
 PRODUCT_COPY_FILES += \
     device/htc/speedy/prebuilt/libcryp98.so:system/lib/libcryp98.so
@@ -124,7 +138,7 @@ $(call inherit-product, device/htc/speedy/media_htcaudio.mk)
 # stuff common to all HTC phones
 $(call inherit-product, device/htc/common/common.mk)
 
-$(call inherit-product, build/target/product/full_base.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 
 PRODUCT_NAME := htc_speedy
