@@ -50,9 +50,9 @@ PRODUCT_COPY_FILES += \
     frameworks/base/data/etc/android.hardware.telephony.cdma.xml:system/etc/permissions/android.hardware.telephony.cdma.xml
 
 PRODUCT_PACKAGES += \
-    lights.speedy \
     gps.speedy \
     sensors.speedy 
+#    lights.speedy \
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
@@ -117,7 +117,6 @@ PRODUCT_COPY_FILES += \
     device/htc/speedy/modules/nfs.ko:system/lib/modules/nfs.ko \
     device/htc/speedy/modules/rpcsec_gss_krb5.ko:system/lib/modules/rpcsec_gss_krb5.ko \
     device/htc/speedy/modules/sunrpc.ko:system/lib/modules/sunrpc.ko \
-    device/htc/speedy/modules/tun.ko:system/lib/modules/tun.ko \
     device/htc/speedy/modules/wimaxdbg.ko:system/lib/modules/wimaxdbg.ko \
     device/htc/speedy/modules/wimaxuart.ko:system/lib/modules/wimaxuart.ko
 
