@@ -62,7 +62,8 @@ PRODUCT_COPY_FILES += \
     device/htc/speedy/keylayout/h2w_headset.kl:system/usr/keylayout/h2w_headset.kl\
     device/htc/speedy/keylayout/speedy-keypad.kl:system/usr/keylayout/speedy-keypad.kl \
     device/htc/speedy/keylayout/AVRCP.kl:system/usr/keylayout/AVRCP.kl \
-    device/htc/speedy/keylayout/qwerty.kl:system/usr/keylayout/qwerty.kl
+    device/htc/speedy/keylayout/qwerty.kl:system/usr/keylayout/qwerty.kl \
+    device/htc/speedy/atmel-touchscreen.idc:system/usr/idc/atmel-touchscreen.idc
 
 # Firmware
 PRODUCT_COPY_FILES += \
