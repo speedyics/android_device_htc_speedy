@@ -76,10 +76,6 @@ service dhcpcd_eth0 /system/bin/dhcpcd -ABKL
     disabled
     oneshot
 
-service dhcpWimax /system/bin/dhcpcd -ABKL -f /etc/wimax/dhcp/wimaxDhcp.conf wimax0
-    disabled
-    oneshot
-
 service iprenew_eth0 /system/bin/dhcpcd -n
     disabled
     oneshot
@@ -124,71 +120,4 @@ on property:ro.build.tags=test-keys
 on property:ro.build.tags=release-keys
     start htc_ebdlogd_rel
 
-# wimax daemons
-service sequansd /system/bin/sequansd /etc/wimax/sequansd/sequansd_app.xml
-    user root
-    group root inet
-    socket sequansd_0 dgram 660 root root
-    disabled
-    oneshot
-
-service wimaxDhcpRelease /system/bin/wimaxDhcpRelease
-    user root
-    group root
-    disabled
-    oneshot
-
-service wimaxDhcpRenew /system/bin/wimaxDhcpRenew
-    user root
-    group root
-    disabled
-    oneshot
-
-service wimaxAddRoute /system/bin/wimaxAddRoute
-    user root
-    group root
-    disabled
-    oneshot
-
-service wimaxDumpLogcat /system/bin/wimaxDumpLogcat /data/wimax/log
-    user root
-    group root
-    disabled
-    oneshot
-
-service wimaxDumpKmsg /system/bin/wimaxDumpKmsg /data/wimax/log
-    user root
-    group root
-    disabled
-    oneshot
-
-service wimaxDumpLastKmsg /system/bin/wimaxDumpLastKmsg /data/wimax/log
-    user root
-    group root
-    disabled
-    oneshot
-
-service wmxCfgItf /system/bin/wimaxConfigInterface
-    user root
-    group root
-    disabled
-    oneshot
-
-# wimax_mtd daemon
-service wimax_mtd /system/bin/wimax_mtd
-   user root
-   group root
-   oneshot
-
-# setWMXPropd daemon
-service setWMXPropd /system/bin/setWiMAXPropDaemond
-    user root
-    group root
-    oneshot
-
-# getWMXPropd daemon
-service getWMXPropd /system/bin/getWiMAXPropDaemond
-    user root
-    group root
-    oneshot
 
