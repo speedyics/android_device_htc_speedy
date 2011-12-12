@@ -18,9 +18,9 @@ PRODUCT_BUILD_PROP_OVERRIDES += BUILD_ID=GRI40 PRODUCT_NAME=htc_speedy BUILD_FIN
 PRODUCT_CODENAME = Artis
 
 ifeq ($(NIGHTLY_BUILD),true)
-    BUILD_VERSION := 2.0.0b1-$(shell date +%m%d%Y)-NIGHTLY
+    BUILD_VERSION := 2.0.0p1-$(shell date +%m%d%Y)-NIGHTLY
 else
-    BUILD_VERSION := 2.0.0b1
+    BUILD_VERSION := 2.0.0p1
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -28,10 +28,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 PRODUCT_PACKAGES += \
     Camera
-
-#Temp packages -- let's put this into it's own make file in the vendor config.
-PRODUCT_PACKAGES += \
-    bash vim nano libncurses ssh rsync
 
 #Get eng stuff on our userdebug builds
 # Turn on checkjni for non-user builds.
