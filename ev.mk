@@ -16,17 +16,9 @@ PRODUCT_BUILD_PROP_OVERRIDES += BUILD_ID=GRI40 PRODUCT_NAME=htc_speedy BUILD_FIN
 
 # Set up the product codename, build version & MOTD.
 PRODUCT_CODENAME = Artis
-
-ifeq ($(NIGHTLY_BUILD),true)
-    BUILD_VERSION := 2.0.0p1-$(shell date +%m%d%Y)-NIGHTLY
-else
-    BUILD_VERSION := 2.0.0p1
-endif
+PRODUCT_VERSION_DEVICE_SPECIFIC := p1
 
 PRODUCT_MOTD :="\n\n\n--------------------MESSAGE---------------------\nThank you for choosing Evervolv for your Evo Shift 4G\nPlease visit us at \#evervolv on irc.freenode.net\nFollow @preludedrew for the latest Evervolv updates\nGet the latest rom at evervolv.com\n------------------------------------------------\n"
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.build.romversion=Evervolv-$(PRODUCT_CODENAME)-$(BUILD_VERSION)
 
 PRODUCT_PACKAGES += \
     Camera
