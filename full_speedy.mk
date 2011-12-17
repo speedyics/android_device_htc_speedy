@@ -51,7 +51,13 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     gps.speedy \
-    sensors.speedy 
+    sensors.speedy \
+    librs_jni \
+    audio.primary.msm7x30 \
+    audio_policy.msm7x30 \
+    gralloc.msm7x30 \
+    overlay.default \
+    com.android.future.usb.accessory
 #    lights.speedy \
 
 # Keylayouts
@@ -86,6 +92,21 @@ PRODUCT_COPY_FILES += \
     device/htc/speedy/firmware/yamato_pm4.fw:system/etc/firmware/yamato_pm4.fw 
 
 
+# Permissions
+PRODUCT_COPY_FILES += \
+    frameworks/base/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
+    frameworks/base/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
+    frameworks/base/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
+    frameworks/base/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
+    frameworks/base/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
+    frameworks/base/data/etc/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
+    frameworks/base/data/etc/android.hardware.touchscreen.multitouch.distinct.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.distinct.xml \
+    frameworks/base/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
+    frameworks/base/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
+
+# media config xml file
+PRODUCT_COPY_FILES += \
+    device/htc/speedy/media_profiles.xml:system/etc/media_profiles.xml
 
 # we have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
@@ -125,9 +146,6 @@ PRODUCT_COPY_FILES += \
     device/htc/speedy/prebuilt/libcryp98.so:system/lib/libcryp98.so
 
 $(call inherit-product-if-exists, vendor/htc/speedy/speedy-vendor.mk)
-
-# common msm7x30 configs
-$(call inherit-product, device/htc/msm7x30-common/msm7x30.mk)
 
 # media profiles and capabilities spec
 $(call inherit-product, device/htc/speedy/media_a1026.mk)

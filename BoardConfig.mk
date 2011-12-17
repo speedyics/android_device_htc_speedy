@@ -25,13 +25,39 @@
 # against the traditional rules of inheritance).
 USE_CAMERA_STUB := true
 
-# inherit from common msm7x30
--include device/htc/msm7x30-common/BoardConfigCommon.mk
-
 # inherit from the proprietary version
 -include vendor/htc/speedy/BoardConfigVendor.mk
 
+TARGET_NO_BOOTLOADER := true
+
+TARGET_BOARD_PLATFORM := msm7x30
+TARGET_BOARD_PLATFORM_GPU := qcom-adreno200
 TARGET_BOOTLOADER_BOARD_NAME := speedy
+TARGET_CPU_ABI := armeabi-v7a
+TARGET_CPU_ABI2 := armeabi
+TARGET_ARCH_VARIANT := armv7-a-neon
+ARCH_ARM_HAVE_TLS_REGISTER := true
+
+TARGET_SPECIFIC_HEADER_PATH := device/htc/msm7x30-common/include
+
+# Wifi related defines
+BOARD_WPA_SUPPLICANT_DRIVER      := WEXT
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_wext
+WPA_SUPPLICANT_VERSION           := VER_0_8_X
+BOARD_WLAN_DEVICE                := bcm4329
+WIFI_DRIVER_MODULE_PATH          := "/system/lib/modules/bcm4329.ko"
+WIFI_DRIVER_FW_PATH_STA          := "/vendor/firmware/fw_bcm4329.bin"
+WIFI_DRIVER_FW_PATH_AP           := "/vendor/firmware/fw_bcm4329_apsta.bin"
+WIFI_DRIVER_MODULE_ARG           := "firmware_path=/vendor/firmware/fw_bcm4329.bin nvram_path=/proc/calibration"
+WIFI_DRIVER_MODULE_NAME          := "bcm4329"
+
+BOARD_USES_GENERIC_AUDIO := false
+BOARD_PREBUILT_LIBAUDIO := true
+
+BOARD_HAVE_BLUETOOTH := true
+BOARD_HAVE_BLUETOOTH_BCM := true
+
+BOARD_VENDOR_QCOM_AMSS_VERSION := 1200
 
 BOARD_USE_NEW_LIBRIL_HTC := true
 
@@ -42,16 +68,18 @@ BOARD_KERNEL_PAGE_SIZE := 4096
 BOARD_USES_QCOM_HARDWARE := true
 BOARD_USES_QCOM_LIBS := true
 
+BOARD_EGL_CFG := device/htc/speedy/egl.cfg
 BOARD_USES_OVERLAY := true
 #USE_OPENGL_RENDERER := true
 #BOARD_USES_HGL := true
 
-COMMON_GLOBAL_CFLAGS += -DMISSING_EGL_EXTERNAL_IMAGE -DMISSING_EGL_PIXEL_FORMAT_YV12 -DMISSING_GRALLOC_BUFFERS
+COMMON_GLOBAL_CFLAGS += \
+    -DMISSING_EGL_EXTERNAL_IMAGE \
+    -DMISSING_EGL_PIXEL_FORMAT_YV12 \
+    -DMISSING_GRALLOC_BUFFERS
 
 #BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := speedy
 #BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 50000
-
-BOARD_HAVE_SQN_WIMAX := true
 
 # cat /proc/emmc
 #dev:        size     erasesize name
