@@ -38,7 +38,7 @@ TARGET_CPU_ABI2 := armeabi
 TARGET_ARCH_VARIANT := armv7-a-neon
 ARCH_ARM_HAVE_TLS_REGISTER := true
 
-TARGET_SPECIFIC_HEADER_PATH := device/htc/msm7x30-common/include
+TARGET_SPECIFIC_HEADER_PATH := device/htc/speedy/include
 
 # Wifi related defines
 BOARD_WPA_SUPPLICANT_DRIVER      := WEXT
@@ -50,6 +50,8 @@ WIFI_DRIVER_FW_PATH_STA          := "/vendor/firmware/fw_bcm4329.bin"
 WIFI_DRIVER_FW_PATH_AP           := "/vendor/firmware/fw_bcm4329_apsta.bin"
 WIFI_DRIVER_MODULE_ARG           := "firmware_path=/vendor/firmware/fw_bcm4329.bin nvram_path=/proc/calibration"
 WIFI_DRIVER_MODULE_NAME          := "bcm4329"
+
+BOARD_USE_LEGACY_TOUCHSCREEN := true
 
 BOARD_USES_GENERIC_AUDIO := false
 BOARD_PREBUILT_LIBAUDIO := true

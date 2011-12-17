@@ -53,12 +53,19 @@ PRODUCT_PACKAGES += \
     gps.speedy \
     sensors.speedy \
     librs_jni \
+    audio.a2dp.default \
     audio.primary.msm7x30 \
     audio_policy.msm7x30 \
     gralloc.msm7x30 \
     overlay.default \
+    libOmxCore \
+    libOmxVidEnc \
     com.android.future.usb.accessory
 #    lights.speedy \
+
+# Touchscreen config.
+PRODUCT_COPY_FILES += \
+    device/htc/speedy/atmel-touchscreen.idc:system/usr/idc/atmel-touchscreen.idc
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
@@ -68,8 +75,7 @@ PRODUCT_COPY_FILES += \
     device/htc/speedy/keylayout/h2w_headset.kl:system/usr/keylayout/h2w_headset.kl\
     device/htc/speedy/keylayout/speedy-keypad.kl:system/usr/keylayout/speedy-keypad.kl \
     device/htc/speedy/keylayout/AVRCP.kl:system/usr/keylayout/AVRCP.kl \
-    device/htc/speedy/keylayout/qwerty.kl:system/usr/keylayout/qwerty.kl \
-    device/htc/speedy/atmel-touchscreen.idc:system/usr/idc/atmel-touchscreen.idc
+    device/htc/speedy/keylayout/qwerty.kl:system/usr/keylayout/qwerty.kl
 
 # Firmware
 PRODUCT_COPY_FILES += \
@@ -141,6 +147,10 @@ PRODUCT_COPY_FILES += \
     device/htc/speedy/modules/sunrpc.ko:system/lib/modules/sunrpc.ko \
     device/htc/speedy/modules/wimaxdbg.ko:system/lib/modules/wimaxdbg.ko \
     device/htc/speedy/modules/wimaxuart.ko:system/lib/modules/wimaxuart.ko
+
+#Disable HWAccel for now
+ADDITIONAL_BUILD_PROPERTIES += \
+    ro.config.disable_hw_accel=true
 
 PRODUCT_COPY_FILES += \
     device/htc/speedy/prebuilt/libcryp98.so:system/lib/libcryp98.so
