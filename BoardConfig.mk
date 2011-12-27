@@ -82,6 +82,7 @@ COMMON_GLOBAL_CFLAGS += \
 
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := speedy
 BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 50000
+BOARD_USES_QCOM_LIBRPC := true
 
 # cat /proc/emmc
 #dev:        size     erasesize name
