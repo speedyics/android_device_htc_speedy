@@ -21,13 +21,13 @@ PRODUCT_AAPT_PREF_CONFIG := hdpi
 
 # The gps config appropriate for this device
 PRODUCT_COPY_FILES += \
-    device/htc/speedy/gps.conf:system/etc/gps.conf
+    device/htc/speedy/prebuilt/system/etc/gps.conf:system/etc/gps.conf
 
 ## (1) First, the most specific values, i.e. the aspects that are specific to GSM
 
 PRODUCT_COPY_FILES += \
-    device/htc/speedy/init.speedy.rc:root/init.speedy.rc \
-    device/htc/speedy/ueventd.speedy.rc:root/ueventd.speedy.rc
+    device/htc/speedy/prebuilt/root/init.speedy.rc:root/init.speedy.rc \
+    device/htc/speedy/prebuilt/root/ueventd.speedy.rc:root/ueventd.speedy.rc
 
 ## (2) Also get non-open-source GSM-specific aspects if available
 $(call inherit-product-if-exists, vendor/htc/speedy/speedy-vendor.mk)
@@ -65,40 +65,40 @@ PRODUCT_PACKAGES += \
 
 # Input config files
 PRODUCT_COPY_FILES += \
-    device/htc/speedy/atmel-touchscreen.idc:system/usr/idc/atmel-touchscreen.idc \
-    device/htc/speedy/keylayout/atmel-touchscreen.kl:system/usr/keylayout/atmel-touchscreen.kl \
-    device/htc/speedy/speedy-keypad.idc:system/usr/idc/speedy-keypad.idc \
-    device/htc/speedy/keylayout/speedy-keypad.kl:system/usr/keylayout/speedy-keypad.kl
+    device/htc/speedy/prebuilt/system/usr/idc/atmel-touchscreen.idc:system/usr/idc/atmel-touchscreen.idc \
+    device/htc/speedy/prebuilt/system/usr/keylayout/atmel-touchscreen.kl:system/usr/keylayout/atmel-touchscreen.kl \
+    device/htc/speedy/prebuilt/system/usr/idc//speedy-keypad.idc:system/usr/idc/speedy-keypad.idc \
+    device/htc/speedy/prebuilt/system/usr/keylayout/speedy-keypad.kl:system/usr/keylayout/speedy-keypad.kl
 
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
-    device/htc/speedy/keychars/qwerty2.kcm.bin:system/usr/keychars/qwerty2.kcm.bin \
-    device/htc/speedy/keychars/qwerty.kcm.bin:system/usr/keychars/qwerty.kcm.bin \
-    device/htc/speedy/keychars/speedy-keypad.kcm.bin:system/usr/keychars/speedy-keypad.kcm.bin \
-    device/htc/speedy/keylayout/h2w_headset.kl:system/usr/keylayout/h2w_headset.kl\
-    device/htc/speedy/keylayout/AVRCP.kl:system/usr/keylayout/AVRCP.kl \
-    device/htc/speedy/keylayout/qwerty.kl:system/usr/keylayout/qwerty.kl
+    device/htc/speedy/prebuilt/system/usr/keychars/qwerty2.kcm.bin:system/usr/keychars/qwerty2.kcm.bin \
+    device/htc/speedy/prebuilt/system/usr/keychars/qwerty.kcm.bin:system/usr/keychars/qwerty.kcm.bin \
+    device/htc/speedy/prebuilt/system/usr/keychars/speedy-keypad.kcm.bin:system/usr/keychars/speedy-keypad.kcm.bin \
+    device/htc/speedy/prebuilt/system/usr/keylayout/h2w_headset.kl:system/usr/keylayout/h2w_headset.kl\
+    device/htc/speedy/prebuilt/system/usr/keylayout/AVRCP.kl:system/usr/keylayout/AVRCP.kl \
+    device/htc/speedy/prebuilt/system/usr/keylayout/qwerty.kl:system/usr/keylayout/qwerty.kl
 
 # Firmware
 PRODUCT_COPY_FILES += \
-    device/htc/speedy/firmware/bcm4329.hcd:system/etc/firmware/bcm4329.hcd \
-    device/htc/speedy/firmware/BCM4329B1_002.002.023.0511.0538.hcd:system/etc/firmware/BCM4329B1_002.002.023.0511.0538.hcd \
-    device/htc/speedy/firmware/default.acdb:system/etc/firmware/default.acdb \
-    device/htc/speedy/firmware/default_mfg.acdb:system/etc/firmware/default_mfg.acdb \
-    device/htc/speedy/firmware/default_org.acdb:system/etc/firmware/default_org.acdb \
-    device/htc/speedy/firmware/fw_bcm4329.bin:system/vendor/firmware/fw_bcm4329.bin \
-    device/htc/speedy/firmware/fw_bcm4329_apsta.bin:system/vendor/firmware/fw_bcm4329_apsta.bin \
-    device/htc/speedy/firmware/vidc_720p_command_control.fw:system/etc/firmware/vidc_720p_command_control.fw \
-    device/htc/speedy/firmware/vidc_720p_h263_dec_mc.fw:system/etc/firmware/vidc_720p_h263_dec_mc.fw \
-    device/htc/speedy/firmware/vidc_720p_h264_dec_mc.fw:system/etc/firmware/vidc_720p_h264_dec_mc.fw \
-    device/htc/speedy/firmware/vidc_720p_h264_enc_mc.fw:system/etc/firmware/vidc_720p_h264_enc_mc.fw \
-    device/htc/speedy/firmware/vidc_720p_mp2_dec_mc.fw:system/etc/firmware/vidc_720p_mp2_dec_mc.fw \
-    device/htc/speedy/firmware/vidc_720p_mp4_dec_mc.fw:system/etc/firmware/vidc_720p_mp4_dec_mc.fw \
-    device/htc/speedy/firmware/vidc_720p_mp4_enc_mc.fw:system/etc/firmware/vidc_720p_mp4_enc_mc.fw \
-    device/htc/speedy/firmware/vidc_720p_vc1_dec_mc.fw:system/etc/firmware/vidc_720p_vc1_dec_mc.fw \
-    device/htc/speedy/firmware/yamato_pfp.fw:system/etc/firmware/yamato_pfp.fw \
-    device/htc/speedy/firmware/yamato_pm4.fw:system/etc/firmware/yamato_pm4.fw 
+    device/htc/speedy/prebuilt/vendor/firmware/bcm4329.hcd:system/etc/firmware/bcm4329.hcd \
+    device/htc/speedy/prebuilt/vendor/firmware/BCM4329B1_002.002.023.0511.0538.hcd:system/etc/firmware/BCM4329B1_002.002.023.0511.0538.hcd \
+    device/htc/speedy/prebuilt/vendor/firmware/default.acdb:system/etc/firmware/default.acdb \
+    device/htc/speedy/prebuilt/vendor/firmware/default_mfg.acdb:system/etc/firmware/default_mfg.acdb \
+    device/htc/speedy/prebuilt/vendor/firmware/default_org.acdb:system/etc/firmware/default_org.acdb \
+    device/htc/speedy/prebuilt/vendor/firmware/fw_bcm4329.bin:system/vendor/firmware/fw_bcm4329.bin \
+    device/htc/speedy/prebuilt/vendor/firmware/fw_bcm4329_apsta.bin:system/vendor/firmware/fw_bcm4329_apsta.bin \
+    device/htc/speedy/prebuilt/vendor/firmware/vidc_720p_command_control.fw:system/etc/firmware/vidc_720p_command_control.fw \
+    device/htc/speedy/prebuilt/vendor/firmware/vidc_720p_h263_dec_mc.fw:system/etc/firmware/vidc_720p_h263_dec_mc.fw \
+    device/htc/speedy/prebuilt/vendor/firmware/vidc_720p_h264_dec_mc.fw:system/etc/firmware/vidc_720p_h264_dec_mc.fw \
+    device/htc/speedy/prebuilt/vendor/firmware/vidc_720p_h264_enc_mc.fw:system/etc/firmware/vidc_720p_h264_enc_mc.fw \
+    device/htc/speedy/prebuilt/vendor/firmware/vidc_720p_mp2_dec_mc.fw:system/etc/firmware/vidc_720p_mp2_dec_mc.fw \
+    device/htc/speedy/prebuilt/vendor/firmware/vidc_720p_mp4_dec_mc.fw:system/etc/firmware/vidc_720p_mp4_dec_mc.fw \
+    device/htc/speedy/prebuilt/vendor/firmware/vidc_720p_mp4_enc_mc.fw:system/etc/firmware/vidc_720p_mp4_enc_mc.fw \
+    device/htc/speedy/prebuilt/vendor/firmware/vidc_720p_vc1_dec_mc.fw:system/etc/firmware/vidc_720p_vc1_dec_mc.fw \
+    device/htc/speedy/prebuilt/vendor/firmware/yamato_pfp.fw:system/etc/firmware/yamato_pfp.fw \
+    device/htc/speedy/prebuilt/vendor/firmware/yamato_pm4.fw:system/etc/firmware/yamato_pm4.fw 
 
 
 # Permissions
@@ -115,7 +115,7 @@ PRODUCT_COPY_FILES += \
 
 # media config xml file
 PRODUCT_COPY_FILES += \
-    device/htc/speedy/media_profiles.xml:system/etc/media_profiles.xml
+    device/htc/speedy/prebuilt/system/etc/media_profiles.xml:system/etc/media_profiles.xml
 
 # we have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
@@ -124,14 +124,14 @@ PRODUCT_TAGS += dalvik.gc.type-precise
 PRODUCT_LOCALES += en
 
 PRODUCT_COPY_FILES += \
-    device/htc/speedy/vold.fstab:system/etc/vold.fstab \
-    device/htc/speedy/apns-conf.xml:system/etc/apns-conf.xml
+    device/htc/speedy/prebuilt/system/etc/vold.fstab:system/etc/vold.fstab \
+    device/htc/speedy/prebuilt/system/etc/apns-conf.xml:system/etc/apns-conf.xml
 
 # Kernel modules
 #PRODUCT_COPY_FILES += \
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
-LOCAL_KERNEL := device/htc/speedy/kernel
+LOCAL_KERNEL := device/htc/speedy/prebuilt/root/kernel
 else
 LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
@@ -140,23 +140,23 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel
 
 PRODUCT_COPY_FILES += \
-    device/htc/speedy/modules/bcm4329.ko:system/lib/modules/bcm4329.ko \
-    device/htc/speedy/modules/sequans_sdio.ko:system/lib/modules/sequans_sdio.ko \
-    device/htc/speedy/modules/auth_rpcgss.ko:system/lib/modules/auth_rpcgss.ko \
-    device/htc/speedy/modules/cifs.ko:system/lib/modules/cifs.ko \
-    device/htc/speedy/modules/lockd.ko:system/lib/modules/lockd.ko \
-    device/htc/speedy/modules/nfs.ko:system/lib/modules/nfs.ko \
-    device/htc/speedy/modules/rpcsec_gss_krb5.ko:system/lib/modules/rpcsec_gss_krb5.ko \
-    device/htc/speedy/modules/sunrpc.ko:system/lib/modules/sunrpc.ko \
-    device/htc/speedy/modules/wimaxdbg.ko:system/lib/modules/wimaxdbg.ko \
-    device/htc/speedy/modules/wimaxuart.ko:system/lib/modules/wimaxuart.ko
+    device/htc/speedy/prebuilt/system/lib/modules/bcm4329.ko:system/lib/modules/bcm4329.ko \
+    device/htc/speedy/prebuilt/system/lib/modules/sequans_sdio.ko:system/lib/modules/sequans_sdio.ko \
+    device/htc/speedy/prebuilt/system/lib/modules/auth_rpcgss.ko:system/lib/modules/auth_rpcgss.ko \
+    device/htc/speedy/prebuilt/system/lib/modules/cifs.ko:system/lib/modules/cifs.ko \
+    device/htc/speedy/prebuilt/system/lib/modules/lockd.ko:system/lib/modules/lockd.ko \
+    device/htc/speedy/prebuilt/system/lib/modules/nfs.ko:system/lib/modules/nfs.ko \
+    device/htc/speedy/prebuilt/system/lib/modules/rpcsec_gss_krb5.ko:system/lib/modules/rpcsec_gss_krb5.ko \
+    device/htc/speedy/prebuilt/system/lib/modules/sunrpc.ko:system/lib/modules/sunrpc.ko \
+    device/htc/speedy/prebuilt/system/lib/modules/wimaxdbg.ko:system/lib/modules/wimaxdbg.ko \
+    device/htc/speedy/prebuilt/system/lib/modules/wimaxuart.ko:system/lib/modules/wimaxuart.ko
 
 #Disable HWAccel for now
 ADDITIONAL_BUILD_PROPERTIES += \
     ro.config.disable_hw_accel=true
 
 PRODUCT_COPY_FILES += \
-    device/htc/speedy/prebuilt/libcryp98.so:system/lib/libcryp98.so
+    device/htc/speedy/prebuilt/system/lib/libcryp98.so:system/lib/libcryp98.so
 
 $(call inherit-product-if-exists, vendor/htc/speedy/speedy-vendor.mk)
 

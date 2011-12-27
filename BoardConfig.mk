@@ -70,7 +70,7 @@ BOARD_KERNEL_PAGE_SIZE := 4096
 BOARD_USES_QCOM_HARDWARE := true
 BOARD_USES_QCOM_LIBS := true
 
-BOARD_EGL_CFG := device/htc/speedy/egl.cfg
+BOARD_EGL_CFG := device/htc/speedy/prebuilt/system/lib/egl/egl.cfg
 BOARD_USES_OVERLAY := true
 #USE_OPENGL_RENDERER := true
 #BOARD_USES_HGL := true
