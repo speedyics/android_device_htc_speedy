@@ -27,6 +27,7 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
     device/htc/speedy/prebuilt/root/init.speedy.rc:root/init.speedy.rc \
+    device/htc/speedy/prebuilt/root/init.speedy.usb.rc:root/init.speedy.usb.rc \
     device/htc/speedy/prebuilt/root/ueventd.speedy.rc:root/ueventd.speedy.rc
 
 ## (2) Also get non-open-source GSM-specific aspects if available

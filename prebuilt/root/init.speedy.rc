@@ -1,3 +1,6 @@
+import init.speedy.usb.rc
+
+
 on boot
     mount debugfs /sys/kernel/debug /sys/kernel/debug
 
