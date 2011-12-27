@@ -63,9 +63,13 @@ PRODUCT_PACKAGES += \
     libOmxVidEnc \
     com.android.future.usb.accessory
 
-# Touchscreen config.
+# Input config files
 PRODUCT_COPY_FILES += \
-    device/htc/speedy/atmel-touchscreen.idc:system/usr/idc/atmel-touchscreen.idc
+    device/htc/speedy/atmel-touchscreen.idc:system/usr/idc/atmel-touchscreen.idc \
+    device/htc/speedy/keylayout/atmel-touchscreen.kl:system/usr/idc/atmel-touchscreen.kl \
+    device/htc/speedy/speedy-keypad.idc:system/usr/idc/speedy-keypad.idc \
+    device/htc/speedy/keylayout/speedy-keypad.kl:system/usr/keylayout/speedy-keypad.kl
+
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
@@ -73,7 +77,6 @@ PRODUCT_COPY_FILES += \
     device/htc/speedy/keychars/qwerty.kcm.bin:system/usr/keychars/qwerty.kcm.bin \
     device/htc/speedy/keychars/speedy-keypad.kcm.bin:system/usr/keychars/speedy-keypad.kcm.bin \
     device/htc/speedy/keylayout/h2w_headset.kl:system/usr/keylayout/h2w_headset.kl\
-    device/htc/speedy/keylayout/speedy-keypad.kl:system/usr/keylayout/speedy-keypad.kl \
     device/htc/speedy/keylayout/AVRCP.kl:system/usr/keylayout/AVRCP.kl \
     device/htc/speedy/keylayout/qwerty.kl:system/usr/keylayout/qwerty.kl
 
