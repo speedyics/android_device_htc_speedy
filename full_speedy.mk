@@ -52,6 +52,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     gps.speedy \
     sensors.speedy \
+    lights.speedy \
     librs_jni \
     audio.a2dp.default \
     audio.primary.msm7x30 \
@@ -61,7 +62,6 @@ PRODUCT_PACKAGES += \
     libOmxCore \
     libOmxVidEnc \
     com.android.future.usb.accessory
-#    lights.speedy \
 
 # Touchscreen config.
 PRODUCT_COPY_FILES += \
