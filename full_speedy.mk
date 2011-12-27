@@ -66,7 +66,7 @@ PRODUCT_PACKAGES += \
 # Input config files
 PRODUCT_COPY_FILES += \
     device/htc/speedy/atmel-touchscreen.idc:system/usr/idc/atmel-touchscreen.idc \
-    device/htc/speedy/keylayout/atmel-touchscreen.kl:system/usr/idc/atmel-touchscreen.kl \
+    device/htc/speedy/keylayout/atmel-touchscreen.kl:system/usr/keylayout/atmel-touchscreen.kl \
     device/htc/speedy/speedy-keypad.idc:system/usr/idc/speedy-keypad.idc \
     device/htc/speedy/keylayout/speedy-keypad.kl:system/usr/keylayout/speedy-keypad.kl
 
