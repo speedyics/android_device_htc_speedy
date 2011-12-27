@@ -84,6 +84,8 @@ BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := speedy
 BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 50000
 BOARD_USES_QCOM_LIBRPC := true
 
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/usb_mass_storage/lun0/file
+
 # cat /proc/emmc
 #dev:        size     erasesize name
 #mmcblk0p17: 00040000 00000200 "misc"
